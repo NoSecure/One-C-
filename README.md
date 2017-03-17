@@ -1,2 +1,2 @@
-# One-C-
+# OneC
 Practice
