@@ -1,2 +1,2 @@
-# OneCpp
+# OneC
 Practice
