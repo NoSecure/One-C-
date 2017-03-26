@@ -31,3 +31,54 @@ const引用 P54。const引用引用的对象是常量时不允许修改，是非
   const int &r2 = i;
   r1 = 0;            //正确
   r2 = 0;            //错误：r2是一个常量的引用，不允许通过r2修改i的值
+typedef P61。
+  typedef char *pstring;    //pstring是char*的别名
+  const pstring cstr = 0;   //cstr是指向char的常量指针，不能理解成const char *cstr = 0;
+  const pstring *ps;        //ps是一个指针，它的对象是指向char的常量指针
+auto类型说明符定义的变量必须有初始值，定义多个变量时所有变量的初始基本数据类型都必须一样。
+decltype(f()) sum = x;   //sum的类型就是函数f的返回类型。
+
+#Exercise 3.6
+#include <iostream>
+#include <string>
+#include <cctype>
+
+using namespace std;
+
+int main()
+{
+	string str;
+	getline(cin, str);
+	for(auto &c : str)
+		c='X';
+	cout << str;
+	return 0;
+}
+
+#Exercise 3.17
+#include <iostream>
+#include <string>
+#include <cctype>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+	string str;
+	vector<string> word;
+	while(cin >> str)
+	{
+		word.push_back(str);
+	}
+	for(auto s : word)
+	{
+		for(auto &c : s)
+		{
+			c = toupper(c);
+		}
+		cout << s <<endl;
+	}
+	return 0;
+}
+
