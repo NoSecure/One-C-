@@ -1,0 +1,43 @@
+#Exercise 3.6
+#include <iostream>
+#include <string>
+#include <cctype>
+
+using namespace std;
+
+int main()
+{
+	string str;
+	getline(cin, str);
+	for(auto &c : str)
+		c='X';
+	cout << str;
+	return 0;
+}
+
+#Exercise 3.17
+#include <iostream>
+#include <string>
+#include <cctype>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+	string str;
+	vector<string> word;
+	while(cin >> str)
+	{
+		word.push_back(str);
+	}
+	for(auto s : word)
+	{
+		for(auto &c : s)
+		{
+			c = toupper(c);
+		}
+		cout << s <<endl;
+	}
+	return 0;
+}
